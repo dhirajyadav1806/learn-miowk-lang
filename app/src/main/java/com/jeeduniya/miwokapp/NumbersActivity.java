@@ -40,101 +40,6 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-//        //create an array of words using array data structure
-//        String[] words = new String[10];
-//        words[0] = "one";
-//        words[1] = "two";
-//        words[2] = "three";
-//        words[3] = "four";
-//        words[4] = "five";
-//        words[5] = "six";
-//        words[6] = "seven";
-//        words[7] = "eight";
-//        words[8] = "nine";
-//        words[9] = "ten";
-//
-//        // Verify the contents of the list by printing out each element to the logs
-//        for (int i = 0; i <= 9; i++) {
-//            Log.i("NumbersActivity", "Word at index " + i + ": " + words[i]);
-//        }
-
-
-//        // Create a list of words using arrayList data structure
-//        ArrayList<String> words = new ArrayList<String>();
-//        words.add("one");
-//        words.add("two");
-//        words.add("three");
-//        words.add("four");
-//        words.add("five");
-//        words.add("six");
-//        words.add("seven");
-//        words.add("eight");
-//        words.add("nine");
-//        words.add("ten");
-
-//        // Verify the contents of the list by printing out each element to the logs
-//        for (int i = 0; i <= 9; i++) {
-//            Log.i("NumbersActivity", "Word at index " + i + ": " + words.get(i));
-//        }
-
-//        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-//
-//        int index = 0;
-//
-//        TextView wordView = new TextView(this);
-//        wordView.setText(words.get(index));
-//        rootView.addView(wordView);
-//
-//        index += 1;
-//
-//        TextView wordView2 = new TextView(this);
-//        wordView2.setText(words.get(index));
-//        rootView.addView(wordView2);
-//
-//        index += 1;
-//
-//        TextView wordView3 = new TextView(this);
-//        wordView3.setText(words.get(index));
-//        rootView.addView(wordView3);
-
-//        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-//
-//        int index = 0;
-//
-//        while (index < words.size()) {
-//            TextView wordView = new TextView(this);
-//            wordView.setText(words.get(index));
-//
-//            //set margins for TextView programmatically
-//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//            params.setMargins(50,50,10,10);
-//            wordView.setLayoutParams(params);
-//
-//            rootView.addView(wordView);
-//
-//            // Increment the index variable by 1
-//            index++;
-//        }
-
-
-//        // Create an {@link ArrayAdapter}, whose data source is a list of Strings. The
-//        // adapter knows how to create layouts for each item in the list, using the
-//        // simple_list_item_1.xml layout resource defined in the Android framework.
-//        // This list item layout contains a single {@link TextView}, which the adapter will set to
-//        // display a single word.
-//        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
-//
-//        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-//        // There should be a {@link ListView} with the view ID called list, which is declared in the
-//        // activity_numbers.xml layout file.
-//        GridView listView = (GridView) findViewById(R.id.list);
-//
-//        // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
-//        // {@link ListView} will display list items for each word in the list of words.
-//        // Do this by calling the setAdapter method on the {@link ListView} object and pass in
-//        // 1 argument, which is the {@link ArrayAdapter} with the variable name itemsAdapter.
-//        listView.setAdapter(itemsAdapter);
-
 
         final ArrayList<Word> words = new ArrayList<>();
         Word w1 = new Word("one", "lutti", R.drawable.number_one, R.raw.number_one);
@@ -150,14 +55,9 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("nine", "wo’e", R.drawable.number_nine, R.raw.number_nine));
         words.add(new Word("ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
 
-//        ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this, R.layout.list_item, words);
-//        ListView listView = (ListView) findViewById(R.id.list);
-//        listView.setAdapter(itemsAdapter);
-
         WordAdapter adapter = new WordAdapter(this, words, R.color.category_numbers);
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
-
 
 //      Set a click listener to play the audio when the list item is clicked on
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -218,6 +118,6 @@ public class NumbersActivity extends AppCompatActivity {
                              //releaseMediaPlayer() helper method that we added earlier. the reason that we use the releaseMediaPlayer() method instead of just the
                              //release() method is that this one(releaseMediaPlayer() helper method) has some actual logic about setting the media player variable
                              //back to null if it's not currently configured to play a sound file.
-        //mMediaPlayer.release();
+                             //mMediaPlayer.release();
     }
 }
